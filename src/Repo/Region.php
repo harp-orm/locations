@@ -1,26 +1,23 @@
 <?php
 
-namespace Harp\Locations\Test\Repo;
-
-use Harp\Harp\AbstractRepo;
-use Harp\Locations\Test\Model;
+namespace Harp\Locations\Repo;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class Test extends AbstractRepo
+class Region extends Location
 {
     private static $instance;
 
     /**
-     * @return Test
+     * @return Region
      */
     public static function get()
     {
         if (self::$instance === null) {
-            self::$instance = new Test('Harp\Locations\Test\Model\Test');
+            self::$instance = new Region('Harp\Locations\Model\Region');
         }
 
         return self::$instance;
@@ -28,6 +25,8 @@ class Test extends AbstractRepo
 
     public function initialize()
     {
+        parent::initialize();
 
+        $this->setRootRepo(Location::get());
     }
 }
