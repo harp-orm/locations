@@ -9,18 +9,9 @@ namespace Harp\Locations\Repo;
  */
 class Region extends Location
 {
-    private static $instance;
-
-    /**
-     * @return Region
-     */
-    public static function get()
+    public static function newInstance()
     {
-        if (self::$instance === null) {
-            self::$instance = new Region('Harp\Locations\Model\Region');
-        }
-
-        return self::$instance;
+        return new Region('Harp\Locations\Model\Region');
     }
 
     public function initialize()

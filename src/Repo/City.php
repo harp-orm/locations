@@ -9,18 +9,9 @@ namespace Harp\Locations\Repo;
  */
 class City extends Location
 {
-    private static $instance;
-
-    /**
-     * @return City
-     */
-    public static function get()
+    public static function newInstance()
     {
-        if (self::$instance === null) {
-            self::$instance = new City('Harp\Locations\Model\City');
-        }
-
-        return self::$instance;
+        return new City('Harp\Locations\Model\City');
     }
 
     public function initialize()

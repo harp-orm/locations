@@ -15,18 +15,9 @@ class Location extends AbstractRepo
 {
     use MPRepoTrait;
 
-    private static $instance;
-
-    /**
-     * @return Location
-     */
-    public static function get()
+    public static function newInstance()
     {
-        if (self::$instance === null) {
-            self::$instance = new Location('Harp\Locations\Model\Location');
-        }
-
-        return self::$instance;
+        return new Location('Harp\Locations\Model\Location');
     }
 
     public function findByCode($code, $flags = null)

@@ -11,18 +11,9 @@ use Harp\Validate\Assert;
  */
 class Country extends Location
 {
-    private static $instance;
-
-    /**
-     * @return Country
-     */
-    public static function get()
+    public static function newInstance()
     {
-        if (self::$instance === null) {
-            self::$instance = new Country('Harp\Locations\Model\Country');
-        }
-
-        return self::$instance;
+        return new Country('Harp\Locations\Model\Country');
     }
 
     public function initialize()

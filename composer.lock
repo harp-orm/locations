@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/core.git",
-                "reference": "ff0a85825400092ff7e7a7baf75de27a6bd2b7ce"
+                "reference": "b9e54f78d02057eb184f3c83095be249370e16a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/core/zipball/ff0a85825400092ff7e7a7baf75de27a6bd2b7ce",
-                "reference": "ff0a85825400092ff7e7a7baf75de27a6bd2b7ce",
+                "url": "https://api.github.com/repos/harp-orm/core/zipball/b9e54f78d02057eb184f3c83095be249370e16a1",
+                "reference": "b9e54f78d02057eb184f3c83095be249370e16a1",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,8 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "clippings/env-backup": "~0.2.5"
+                "clippings/env-backup": "~0.2.5",
+                "clippings/phpunit-extensions": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -48,7 +49,7 @@
                 "source": "https://github.com/harp-orm/core/tree/master",
                 "issues": "https://github.com/harp-orm/core/issues"
             },
-            "time": "2014-06-04 10:00:49"
+            "time": "2014-06-06 11:11:40"
         },
         {
             "name": "harp-orm/harp",
@@ -56,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/harp.git",
-                "reference": "52c01db89fe2c85a6f14c5ca53e9e9bfe36984b1"
+                "reference": "c12d20c83dfb027c53489d975c34450397f4d179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/harp/zipball/52c01db89fe2c85a6f14c5ca53e9e9bfe36984b1",
-                "reference": "52c01db89fe2c85a6f14c5ca53e9e9bfe36984b1",
+                "url": "https://api.github.com/repos/harp-orm/harp/zipball/c12d20c83dfb027c53489d975c34450397f4d179",
+                "reference": "c12d20c83dfb027c53489d975c34450397f4d179",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +91,7 @@
                 }
             ],
             "description": "Light and Flexible ORM without magic",
-            "time": "2014-06-04 08:36:00"
+            "time": "2014-06-06 13:05:15"
         },
         {
             "name": "harp-orm/materialized-path",
@@ -98,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/materialized-path.git",
-                "reference": "3a85e2fdc32da97614cc519f0ee99cba133b03cf"
+                "reference": "235bafb7bfc8033033b1b1534076f40696a807b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/3a85e2fdc32da97614cc519f0ee99cba133b03cf",
-                "reference": "3a85e2fdc32da97614cc519f0ee99cba133b03cf",
+                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/235bafb7bfc8033033b1b1534076f40696a807b0",
+                "reference": "235bafb7bfc8033033b1b1534076f40696a807b0",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +138,7 @@
                 "source": "https://github.com/harp-orm/materialized-path/tree/master",
                 "issues": "https://github.com/harp-orm/materialized-path/issues"
             },
-            "time": "2014-06-04 08:57:48"
+            "time": "2014-06-06 13:16:21"
         },
         {
             "name": "harp-orm/query",

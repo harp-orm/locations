@@ -22,13 +22,15 @@ class LocationTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->repoInstanceParam = new StaticParam('Harp\Locations\Repo\Location', 'instance', null);
+        $this->repoInstanceParam = new StaticParam('Harp\Core\Repo\AbstractRepo', 'instances', null);
         $this->repoInstanceParam->apply();
     }
 
     public function tearDown()
     {
-        $this->repoInstanceParam->restore();
+        if ($this->repoInstanceParam) {
+            $this->repoInstanceParam->restore();
+        }
 
         parent::tearDown();
     }
