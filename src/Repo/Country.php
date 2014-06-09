@@ -22,7 +22,7 @@ class Country extends Location
 
         $this
             ->setRootRepo(Location::get())
-            ->setAsserts([
+            ->addAsserts([
                 new Assert\Present('code'),
                 new Assert\LengthEquals('code', 2),
             ]);

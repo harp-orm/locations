@@ -31,7 +31,7 @@ class Location extends AbstractRepo
     {
         $this
             ->setInherited(true)
-            ->setAsserts([
+            ->addAsserts([
                 new Assert\Present('name'),
             ])
             ->initializeMaterializedPath();
