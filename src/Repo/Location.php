@@ -3,7 +3,7 @@
 namespace Harp\Locations\Repo;
 
 use Harp\Harp\AbstractRepo;
-use Harp\MP\MPRepoTrait;
+use Harp\MP\Repo\MPTrait;
 use Harp\Validate\Assert;
 
 /**
@@ -13,7 +13,7 @@ use Harp\Validate\Assert;
  */
 class Location extends AbstractRepo
 {
-    use MPRepoTrait;
+    use MPTrait;
 
     public static function newInstance()
     {

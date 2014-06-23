@@ -4,7 +4,7 @@ namespace Harp\Locations\Model;
 
 use Harp\Harp\AbstractModel;
 use Harp\Locations\Repo;
-use Harp\MP\MPModelTrait;
+use Harp\MP\Model\MPTrait;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -13,17 +13,21 @@ use Harp\MP\MPModelTrait;
  */
 class Location extends AbstractModel
 {
-    use MPModelTrait;
+    use MPTrait;
 
-    public function getRepo()
-    {
-        return Repo\Location::get();
-    }
 
     public $id;
     public $name;
     public $class;
     public $code;
+
+    /**
+     * @return Repo\Location
+     */
+    public function getRepo()
+    {
+        return Repo\Location::get();
+    }
 
     /**
      * @param  Location $location

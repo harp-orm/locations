@@ -22,13 +22,11 @@
     "require": {
         "php": ">=5.4.0",
         "harp-orm/harp": "dev-master",
-        "harp-orm/validate": "dev-master",
         "harp-orm/query": "dev-master",
         "harp-orm/core": "dev-master",
         "harp-orm/materialized-path": "dev-master"
     },
     "require-dev": {
-        "psr/log": "~1.0",
         "clippings/env-backup": "~0.2.5"
     },
     "autoload": {
