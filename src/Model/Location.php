@@ -3,7 +3,6 @@
 namespace Harp\Locations\Model;
 
 use Harp\Harp\AbstractModel;
-use Harp\Locations\Repo;
 use Harp\MP\Model\MPTrait;
 
 /**
@@ -13,21 +12,23 @@ use Harp\MP\Model\MPTrait;
  */
 class Location extends AbstractModel
 {
+    const REPO = 'Harp\Locations\Repo\Location';
+
     use MPTrait;
 
+    /**
+     * @param  string $code
+     * @return AbstractModel
+     */
+    public static function findByCode($code)
+    {
+        return static::getRepoStatic()->findByCode($code);
+    }
 
     public $id;
     public $name;
     public $class;
     public $code;
-
-    /**
-     * @return Repo\Location
-     */
-    public function getRepo()
-    {
-        return Repo\Location::get();
-    }
 
     /**
      * @param  Location $location

@@ -11,16 +11,12 @@ use Harp\Validate\Assert;
  */
 class Country extends Location
 {
-    public static function newInstance()
-    {
-        return new Country('Harp\Locations\Model\Country');
-    }
-
     public function initialize()
     {
         parent::initialize();
 
         $this
+            ->setModelClass('Harp\Locations\Model\Country')
             ->setRootRepo(Location::get())
             ->addAsserts([
                 new Assert\Present('code'),

@@ -2,8 +2,7 @@
 
 namespace Harp\Locations\Test\Repo;
 
-use Harp\Locations\Model;
-use Harp\Locations\Repo;
+use Harp\Locations\Model\Location;
 use Harp\Locations\Test\AbstractTestCase;
 use CL\EnvBackup\StaticParam;
 
@@ -36,23 +35,13 @@ class LocationTest extends AbstractTestCase
     }
 
     /**
-     * @covers ::get
-     */
-    public function testLocation()
-    {
-        $repo = Repo\Location::get();
-
-        $this->assertInstanceOf('Harp\Locations\Repo\Location', $repo);
-        $this->assertSame(Repo\Location::get(), $repo);
-    }
-
-    /**
+     * @covers Harp\Locations\Model\Location::findByCode
      * @covers ::findByCode
      */
     public function testFindByCode()
     {
-        $model = Repo\Location::get()->findByCode('BG');
-        $expected = Repo\Location::get()->findByName('Bulgaria');
+        $model = Location::findByCode('BG');
+        $expected = Location::findByName('Bulgaria');
 
         $this->assertSame($model, $expected);
     }
@@ -62,12 +51,12 @@ class LocationTest extends AbstractTestCase
      */
     public function testInitialize()
     {
-        $repo = Repo\Location::get();
+        $repo = Location::getRepoStatic();
 
         $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
         $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
 
-        $location = new Model\Location();
+        $location = new Location();
 
         $this->assertFalse($location->validate());
 

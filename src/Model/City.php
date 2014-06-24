@@ -2,8 +2,6 @@
 
 namespace Harp\Locations\Model;
 
-use Harp\Locations\Repo;
-
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
@@ -11,10 +9,7 @@ use Harp\Locations\Repo;
  */
 class City extends Location
 {
-    public function getRepo()
-    {
-        return Repo\City::get();
-    }
+    const REPO = 'Harp\Locations\Repo\City';
 
     /**
      * @return boolean

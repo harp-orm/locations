@@ -2,7 +2,6 @@
 
 namespace Harp\Locations\Test\Repo;
 
-use Harp\Locations\Model;
 use Harp\Locations\Repo;
 use Harp\Locations\Test\AbstractTestCase;
 use CL\EnvBackup\StaticParam;
@@ -33,17 +32,6 @@ class CityTest extends AbstractTestCase
         }
 
         parent::tearDown();
-    }
-
-    /**
-     * @covers ::get
-     */
-    public function testGet()
-    {
-        $repo = Repo\City::get();
-
-        $this->assertInstanceOf('Harp\Locations\Repo\City', $repo);
-        $this->assertSame(Repo\City::get(), $repo);
     }
 
     /**

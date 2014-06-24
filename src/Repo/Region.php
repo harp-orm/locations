@@ -9,15 +9,12 @@ namespace Harp\Locations\Repo;
  */
 class Region extends Location
 {
-    public static function newInstance()
-    {
-        return new Region('Harp\Locations\Model\Region');
-    }
-
     public function initialize()
     {
         parent::initialize();
 
-        $this->setRootRepo(Location::get());
+        $this
+            ->setModelClass('Harp\Locations\Model\Region')
+            ->setRootRepo(Location::get());
     }
 }

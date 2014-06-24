@@ -2,7 +2,7 @@
 
 namespace Harp\Locations\Test\Model;
 
-use Harp\Locations\Model;
+use Harp\Locations\Model\Location;
 use Harp\Locations\Repo;
 use Harp\Locations\Test\AbstractTestCase;
 
@@ -21,21 +21,11 @@ class RegionTest extends AbstractTestCase
      */
     public function testCity()
     {
-        $eu = Repo\Location::get()->find(2);
+        $eu = Location::find(2);
 
         $this->assertInstanceOf('Harp\Locations\Model\Region', $eu);
         $this->assertTrue($eu->isRegion());
         $this->assertFalse($eu->isCity());
         $this->assertFalse($eu->isCountry());
-    }
-
-    /**
-     * @covers ::getRepo
-     */
-    public function testGetRepo()
-    {
-        $region = new Model\Region();
-
-        $this->assertSame(Repo\Region::get(), $region->getRepo());
     }
 }

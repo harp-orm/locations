@@ -2,7 +2,7 @@
 
 namespace Harp\Locations\Test\Model;
 
-use Harp\Locations\Model;
+use Harp\Locations\Model\Location;
 use Harp\Locations\Repo;
 use Harp\Locations\Test\AbstractTestCase;
 
@@ -22,7 +22,7 @@ class LocationTest extends AbstractTestCase
      */
     public function testCity()
     {
-        $location = new Model\Location();
+        $location = new Location();
 
         $this->assertFalse($location->isRegion());
         $this->assertFalse($location->isCity());
@@ -30,24 +30,14 @@ class LocationTest extends AbstractTestCase
     }
 
     /**
-     * @covers ::getRepo
-     */
-    public function testGetRepo()
-    {
-        $location = new Model\Location();
-
-        $this->assertSame(Repo\Location::get(), $location->getRepo());
-    }
-
-    /**
      * @covers ::contains
      */
     public function testContains()
     {
-        $everywhere = Repo\Location::get()->find(1);
-        $bulgaria = Repo\Location::get()->findByName('Bulgaria');
-        $sofia = Repo\Location::get()->findByName('Sofia');
-        $germany = Repo\Location::get()->findByName('Germany');
+        $everywhere = Location::find(1);
+        $bulgaria = Location::findByName('Bulgaria');
+        $sofia = Location::findByName('Sofia');
+        $germany = Location::findByName('Germany');
 
         $this->assertTrue($everywhere->contains($everywhere));
         $this->assertTrue($everywhere->contains($bulgaria));

@@ -15,11 +15,6 @@ class Location extends AbstractRepo
 {
     use MPTrait;
 
-    public static function newInstance()
-    {
-        return new Location('Harp\Locations\Model\Location');
-    }
-
     public function findByCode($code, $flags = null)
     {
         return $this->findAll()
@@ -30,6 +25,7 @@ class Location extends AbstractRepo
     public function initialize()
     {
         $this
+            ->setModelClass('Harp\Locations\Model\Location')
             ->setInherited(true)
             ->addAsserts([
                 new Assert\Present('name'),

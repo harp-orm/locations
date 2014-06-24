@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a6ac530338f92a49e6bed4217809c2f2",
+    "hash": "53ee042de95c44bf5175843f50b57bc3",
     "packages": [
         {
             "name": "harp-orm/core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/core.git",
-                "reference": "e496f585d25f24510c7db2cb09a3d7b1be4aa70c"
+                "reference": "c2b560e12df45c3cfc63771058def2a84c09a860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/core/zipball/e496f585d25f24510c7db2cb09a3d7b1be4aa70c",
-                "reference": "e496f585d25f24510c7db2cb09a3d7b1be4aa70c",
+                "url": "https://api.github.com/repos/harp-orm/core/zipball/c2b560e12df45c3cfc63771058def2a84c09a860",
+                "reference": "c2b560e12df45c3cfc63771058def2a84c09a860",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "source": "https://github.com/harp-orm/core/tree/master",
                 "issues": "https://github.com/harp-orm/core/issues"
             },
-            "time": "2014-06-23 07:14:50"
+            "time": "2014-06-24 21:25:38"
         },
         {
             "name": "harp-orm/harp",
@@ -59,17 +59,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/harp.git",
-                "reference": "a16b54fefa198ba345f9c5969c20813d0646ab74"
+                "reference": "aa2b5fa3ce7aa3b6a0f3338ee0869f9f9d7b6f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/harp/zipball/a16b54fefa198ba345f9c5969c20813d0646ab74",
-                "reference": "a16b54fefa198ba345f9c5969c20813d0646ab74",
+                "url": "https://api.github.com/repos/harp-orm/harp/zipball/aa2b5fa3ce7aa3b6a0f3338ee0869f9f9d7b6f26",
+                "reference": "aa2b5fa3ce7aa3b6a0f3338ee0869f9f9d7b6f26",
                 "shasum": ""
             },
             "require": {
                 "harp-orm/core": "dev-master",
-                "harp-orm/query": "dev-master",
+                "harp-orm/query": "~0.2.1",
                 "php": ">=5.4.0",
                 "psr/log": "~1.0"
             },
@@ -92,7 +92,7 @@
                 }
             ],
             "description": "Light and Flexible ORM without magic",
-            "time": "2014-06-23 07:20:13"
+            "time": "2014-06-24 15:57:38"
         },
         {
             "name": "harp-orm/materialized-path",
@@ -100,18 +100,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/materialized-path.git",
-                "reference": "eca746b3268833d67db717e2e5c5179813aa65de"
+                "reference": "d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/eca746b3268833d67db717e2e5c5179813aa65de",
-                "reference": "eca746b3268833d67db717e2e5c5179813aa65de",
+                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25",
+                "reference": "d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25",
                 "shasum": ""
             },
             "require": {
                 "harp-orm/core": "dev-master",
                 "harp-orm/harp": "dev-master",
-                "harp-orm/query": "dev-master",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -135,20 +134,20 @@
                 "source": "https://github.com/harp-orm/materialized-path/tree/master",
                 "issues": "https://github.com/harp-orm/materialized-path/issues"
             },
-            "time": "2014-06-23 07:33:21"
+            "time": "2014-06-24 21:29:42"
         },
         {
             "name": "harp-orm/query",
-            "version": "dev-master",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/query.git",
-                "reference": "6a9149eff64b397fade0ca12c75b8f6fcf3a384d"
+                "reference": "940064a69ac18a2b477d495045c177b8f3adb0ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/query/zipball/6a9149eff64b397fade0ca12c75b8f6fcf3a384d",
-                "reference": "6a9149eff64b397fade0ca12c75b8f6fcf3a384d",
+                "url": "https://api.github.com/repos/harp-orm/query/zipball/940064a69ac18a2b477d495045c177b8f3adb0ed",
+                "reference": "940064a69ac18a2b477d495045c177b8f3adb0ed",
                 "shasum": ""
             },
             "require": {
@@ -183,7 +182,7 @@
                 }
             ],
             "description": "SQL Builder for PDO",
-            "time": "2014-06-22 09:47:12"
+            "time": "2014-06-23 11:33:59"
         },
         {
             "name": "harp-orm/serializer",
@@ -372,7 +371,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "harp-orm/harp": 20,
-        "harp-orm/query": 20,
         "harp-orm/core": 20,
         "harp-orm/materialized-path": 20
     },

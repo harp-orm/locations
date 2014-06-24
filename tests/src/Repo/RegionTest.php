@@ -3,7 +3,6 @@
 namespace Harp\Locations\Test\Repo;
 
 use Harp\Locations\Model;
-use Harp\Locations\Repo;
 use Harp\Locations\Test\AbstractTestCase;
 use CL\EnvBackup\StaticParam;
 
@@ -36,23 +35,12 @@ class RegionTest extends AbstractTestCase
     }
 
     /**
-     * @covers ::get
-     */
-    public function testGet()
-    {
-        $repo = Repo\Region::get();
-
-        $this->assertInstanceOf('Harp\Locations\Repo\Region', $repo);
-        $this->assertSame(Repo\Region::get(), $repo);
-    }
-
-    /**
      * @covers ::initialize
      */
     public function testInitialize()
     {
-        $repo = Repo\Region::get();
-        $this->assertSame(Repo\Location::get(), $repo->getRootRepo());
+        $repo = Model\Region::getRepoStatic();
+        $this->assertSame(Model\Location::getRepoStatic(), $repo->getRootRepo());
 
         $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
         $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));

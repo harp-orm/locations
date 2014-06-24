@@ -2,8 +2,7 @@
 
 namespace Harp\Locations\Test;
 
-use Harp\Locations\Repo;
-use Harp\Locations\Model;
+use Harp\Locations\Model\Location;
 use CL\EnvBackup\StaticParam;
 
 /**
@@ -18,12 +17,12 @@ class IntegrationTest extends AbstractTestCase
      */
     public function testSave()
     {
-        $everywhere = Repo\Location::get()->find(1);
-        $bulgaria = Repo\Location::get()->findByName('Bulgaria');
+        $everywhere = Location::find(1);
+        $bulgaria = Location::findByName('Bulgaria');
 
         $children = $everywhere->getChildren()->add($bulgaria);
 
-        Repo\Location::get()->save($everywhere);
+        Location::save($everywhere);
 
         $this->assertQueries([
             'SELECT Location.class, Location.* FROM Location WHERE (id = 1) LIMIT 1',
