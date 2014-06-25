@@ -3,7 +3,7 @@
 namespace Harp\Locations;
 
 use Harp\Harp\AbstractRepo;
-use Harp\MP\Repo\MPTrait;
+use Harp\MP\MPRepoTrait;
 use Harp\Validate\Assert;
 
 /**
@@ -13,7 +13,7 @@ use Harp\Validate\Assert;
  */
 class LocationRepo extends AbstractRepo
 {
-    use MPTrait;
+    use MPRepoTrait;
 
     public function findByCode($code, $flags = null)
     {

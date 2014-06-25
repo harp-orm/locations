@@ -3,7 +3,7 @@
 namespace Harp\Locations;
 
 use Harp\Harp\AbstractModel;
-use Harp\MP\Model\MPTrait;
+use Harp\MP\MPTrait;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>

@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/materialized-path.git",
-                "reference": "d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25"
+                "reference": "e72cd90b754214f40cc5312e4eb5c39ba584e562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25",
-                "reference": "d6cbacaa422dbe00d709f1bc8c6f243ae72a7c25",
+                "url": "https://api.github.com/repos/harp-orm/materialized-path/zipball/e72cd90b754214f40cc5312e4eb5c39ba584e562",
+                "reference": "e72cd90b754214f40cc5312e4eb5c39ba584e562",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "source": "https://github.com/harp-orm/materialized-path/tree/master",
                 "issues": "https://github.com/harp-orm/materialized-path/issues"
             },
-            "time": "2014-06-24 21:29:42"
+            "time": "2014-06-25 10:37:44"
         },
         {
             "name": "harp-orm/query",
