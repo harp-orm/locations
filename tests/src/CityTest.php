@@ -1,12 +1,11 @@
 <?php
 
-namespace Harp\Locations\Test\Model;
+namespace Harp\Locations\Test;
 
-use Harp\Locations\Model\Location;
-use Harp\Locations\Test\AbstractTestCase;
+use Harp\Locations\Location;
 
 /**
- * @coversDefaultClass Harp\Locations\Model\City
+ * @coversDefaultClass Harp\Locations\City
  *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
@@ -22,7 +21,7 @@ class CityTest extends AbstractTestCase
     {
         $sofia = Location::find(11);
 
-        $this->assertInstanceOf('Harp\Locations\Model\City', $sofia);
+        $this->assertInstanceOf('Harp\Locations\City', $sofia);
         $this->assertFalse($sofia->isRegion());
         $this->assertTrue($sofia->isCity());
         $this->assertFalse($sofia->isCountry());

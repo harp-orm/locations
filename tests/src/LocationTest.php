@@ -1,13 +1,11 @@
 <?php
 
-namespace Harp\Locations\Test\Model;
+namespace Harp\Locations\Test;
 
-use Harp\Locations\Model\Location;
-use Harp\Locations\Repo;
-use Harp\Locations\Test\AbstractTestCase;
+use Harp\Locations\Location;
 
 /**
- * @coversDefaultClass Harp\Locations\Model\Location
+ * @coversDefaultClass Harp\Locations\Location
  *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.

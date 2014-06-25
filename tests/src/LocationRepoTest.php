@@ -1,19 +1,18 @@
 <?php
 
-namespace Harp\Locations\Test\Repo;
+namespace Harp\Locations\Test;
 
-use Harp\Locations\Model\Location;
-use Harp\Locations\Test\AbstractTestCase;
+use Harp\Locations\Location;
 use CL\EnvBackup\StaticParam;
 
 /**
- * @coversDefaultClass Harp\Locations\Repo\Location
+ * @coversDefaultClass Harp\Locations\LocationRepo
  *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class LocationTest extends AbstractTestCase
+class LocationRepoTest extends AbstractTestCase
 {
     private $repoInstanceParam;
 
@@ -35,7 +34,7 @@ class LocationTest extends AbstractTestCase
     }
 
     /**
-     * @covers Harp\Locations\Model\Location::findByCode
+     * @covers Harp\Locations\Location::findByCode
      * @covers ::findByCode
      */
     public function testFindByCode()

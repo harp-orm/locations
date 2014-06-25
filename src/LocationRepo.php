@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Locations\Repo;
+namespace Harp\Locations;
 
 use Harp\Harp\AbstractRepo;
 use Harp\MP\Repo\MPTrait;
@@ -11,7 +11,7 @@ use Harp\Validate\Assert;
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class Location extends AbstractRepo
+class LocationRepo extends AbstractRepo
 {
     use MPTrait;
 
@@ -25,7 +25,7 @@ class Location extends AbstractRepo
     public function initialize()
     {
         $this
-            ->setModelClass('Harp\Locations\Model\Location')
+            ->setModelClass('Harp\Locations\Location')
             ->setInherited(true)
             ->addAsserts([
                 new Assert\Present('name'),

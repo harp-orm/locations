@@ -2,9 +2,13 @@
 
 namespace Harp\Locations\Test;
 
+use Harp\Locations\CityRepo;
+use Harp\Locations\CountryRepo;
+use Harp\Locations\LocationRepo;
+use Harp\Locations\RegionRepo;
+
 use Harp\Query\DB;
 use PHPUnit_Framework_TestCase;
-use Harp\Locations\Repo;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -40,10 +44,10 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase {
         DB::get()->setLogger($this->logger);
         DB::get()->beginTransaction();
 
-        Repo\City::get()->clear();
-        Repo\Country::get()->clear();
-        Repo\Location::get()->clear();
-        Repo\Region::get()->clear();
+        CityRepo::get()->clear();
+        CountryRepo::get()->clear();
+        LocationRepo::get()->clear();
+        RegionRepo::get()->clear();
     }
 
     public function tearDown()

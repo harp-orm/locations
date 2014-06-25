@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Locations\Repo;
+namespace Harp\Locations;
 
 use Harp\Validate\Assert;
 
@@ -9,15 +9,15 @@ use Harp\Validate\Assert;
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class Country extends Location
+class CountryRepo extends LocationRepo
 {
     public function initialize()
     {
         parent::initialize();
 
         $this
-            ->setModelClass('Harp\Locations\Model\Country')
-            ->setRootRepo(Location::get())
+            ->setModelClass('Harp\Locations\Country')
+            ->setRootRepo(LocationRepo::get())
             ->addAsserts([
                 new Assert\Present('code'),
                 new Assert\LengthEquals('code', 2),

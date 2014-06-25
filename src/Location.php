@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Locations\Model;
+namespace Harp\Locations;
 
 use Harp\Harp\AbstractModel;
 use Harp\MP\Model\MPTrait;
@@ -12,7 +12,7 @@ use Harp\MP\Model\MPTrait;
  */
 class Location extends AbstractModel
 {
-    const REPO = 'Harp\Locations\Repo\Location';
+    const REPO = 'Harp\Locations\LocationRepo';
 
     use MPTrait;
 

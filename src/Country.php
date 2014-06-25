@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Locations\Model;
+namespace Harp\Locations;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -9,7 +9,7 @@ namespace Harp\Locations\Model;
  */
 class Country extends Location
 {
-    const REPO = 'Harp\Locations\Repo\Country';
+    const REPO = 'Harp\Locations\CountryRepo';
 
     /**
      * @return boolean

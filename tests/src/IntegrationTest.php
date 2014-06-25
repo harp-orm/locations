@@ -2,19 +2,18 @@
 
 namespace Harp\Locations\Test;
 
-use Harp\Locations\Model\Location;
+use Harp\Locations\Location;
 use CL\EnvBackup\StaticParam;
 
 /**
+ * @coversNothing
+ *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
 class IntegrationTest extends AbstractTestCase
 {
-    /**
-     * @coversNothing
-     */
     public function testSave()
     {
         $everywhere = Location::find(1);

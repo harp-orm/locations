@@ -1,19 +1,19 @@
 <?php
 
-namespace Harp\Locations\Test\Repo;
+namespace Harp\Locations\Test;
 
-use Harp\Locations\Repo;
-use Harp\Locations\Test\AbstractTestCase;
+use Harp\Locations\Country;
+use Harp\Locations\Location;
 use CL\EnvBackup\StaticParam;
 
 /**
- * @coversDefaultClass Harp\Locations\Repo\City
+ * @coversDefaultClass Harp\Locations\CountryRepo
  *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class CityTest extends AbstractTestCase
+class CountryRepoTest extends AbstractTestCase
 {
     private $repoInstanceParam;
 
@@ -39,10 +39,26 @@ class CityTest extends AbstractTestCase
      */
     public function testInitialize()
     {
-        $repo = Repo\City::get();
-        $this->assertSame(Repo\Location::get(), $repo->getRootRepo());
+        $repo = Country::getRepoStatic();
+        $this->assertSame(Location::getRepoStatic(), $repo->getRootRepo());
 
         $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
         $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
+
+        $city = new Country(['name' => 'test']);
+
+        $this->assertFalse($city->validate());
+
+        $this->assertEquals('code must be present', $city->getErrors()->humanize());
+
+        $city->code = '1';
+
+        $this->assertFalse($city->validate());
+
+        $this->assertEquals('code should be 2 letters', $city->getErrors()->humanize());
+
+        $city->code = 'BG';
+
+        $this->assertTrue($city->validate());
     }
 }
