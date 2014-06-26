@@ -21,9 +21,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "harp-orm/harp": "dev-master",
-        "harp-orm/core": "dev-master",
-        "harp-orm/materialized-path": "dev-master"
+        "harp-orm/harp": "~0.1.0",
+        "harp-orm/materialized-path": "~0.1.0"
     },
     "require-dev": {
         "clippings/env-backup": "~0.2.5"
