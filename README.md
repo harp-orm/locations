@@ -12,7 +12,24 @@ Hierachical Location struction - you can have regions that encompas countries or
 Usage
 -----
 
-Just use the models / repos included
+Just use the models / repos included.
+
+All locations are saved in a single table, and their relations with one another are handled with [harp-orm/materialized-path](https://github.com/harp-orm/materialized-path)
+
+__Database Tables:__
+
+```
+┌─────────────────────────┐
+│ Table: Location         │
+├─────────────┬───────────┤
+│ id          │ ingeter   │
+│ name        │ string    │
+│ class       │ string    │
+│ parentId    │ integer   │
+│ path        │ string    │
+│ code        │ string    │
+└─────────────┴───────────┘
+```
 
 License
 -------
