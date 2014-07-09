@@ -20,7 +20,7 @@ class Location extends AbstractModel
 
     public static function findByCode($code, $flags = null)
     {
-        return self::where('code', $code)->loadFirst($flags);
+        return self::where('code', $code)->applyFlags($flags)->loadFirst();
     }
 
     public static function initialize(Repo $repo)
