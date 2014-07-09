@@ -3,6 +3,7 @@
 namespace Harp\Locations\Test;
 
 use Harp\Locations\Location;
+use Harp\Locations\Region;
 
 /**
  * @coversDefaultClass Harp\Locations\Region
@@ -25,5 +26,17 @@ class RegionTest extends AbstractTestCase
         $this->assertTrue($eu->isRegion());
         $this->assertFalse($eu->isCity());
         $this->assertFalse($eu->isCountry());
+    }
+
+    /**
+     * @covers ::initialize
+     */
+    public function testInitialize()
+    {
+        $repo = Region::getRepo();
+        $this->assertSame(Location::getRepo(), $repo->getRootRepo());
+
+        $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
+        $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
     }
 }

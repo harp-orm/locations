@@ -3,6 +3,7 @@
 namespace Harp\Locations\Test;
 
 use Harp\Locations\Location;
+use Harp\Locations\City;
 
 /**
  * @coversDefaultClass Harp\Locations\City
@@ -13,6 +14,18 @@ use Harp\Locations\Location;
  */
 class CityTest extends AbstractTestCase
 {
+    /**
+     * @covers ::initialize
+     */
+    public function testInitialize()
+    {
+        $repo = City::getRepo();
+        $this->assertSame(Location::getRepo(), $repo->getRootRepo());
+
+        $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
+        $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
+    }
+
     /**
      * @covers ::isCity
      * @covers ::getRepo

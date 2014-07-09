@@ -3,7 +3,10 @@
 namespace Harp\Locations;
 
 use Harp\Harp\AbstractModel;
-use Harp\MP\MPTrait;
+use Harp\MP\MaterializedPathTrait;
+use Harp\Core\Model\InheritedTrait;
+use Harp\Harp\Repo;
+use Harp\Validate\Assert;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -12,22 +15,27 @@ use Harp\MP\MPTrait;
  */
 class Location extends AbstractModel
 {
-    const REPO = 'Harp\Locations\LocationRepo';
+    use MaterializedPathTrait;
+    use InheritedTrait;
 
-    use MPTrait;
-
-    /**
-     * @param  string $code
-     * @return AbstractModel
-     */
-    public static function findByCode($code)
+    public static function findByCode($code, $flags = null)
     {
-        return static::getRepoStatic()->findByCode($code);
+        return self::where('code', $code)->loadFirst($flags);
+    }
+
+    public static function initialize(Repo $repo)
+    {
+        InheritedTrait::initialize($repo);
+        MaterializedPathTrait::initialize($repo);
+
+        $repo
+            ->addAsserts([
+                new Assert\Present('name'),
+            ]);
     }
 
     public $id;
     public $name;
-    public $class;
     public $code;
 
     /**

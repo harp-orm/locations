@@ -44,4 +44,36 @@ class LocationTest extends AbstractTestCase
         $this->assertFalse($germany->contains($sofia));
         $this->assertFalse($germany->contains($everywhere));
     }
+
+    /**
+     * @covers ::findByCode
+     */
+    public function testFindByCode()
+    {
+        $model = Location::findByCode('BG');
+        $expected = Location::findByName('Bulgaria');
+
+        $this->assertSame($model, $expected);
+    }
+
+    /**
+     * @covers ::initialize
+     */
+    public function testInitialize()
+    {
+        $repo = Location::getRepo();
+
+        $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
+        $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
+
+        $location = new Location();
+
+        $this->assertFalse($location->validate());
+
+        $this->assertEquals('name must be present', $location->getErrors()->humanize());
+
+        $location->name = 'test';
+
+        $this->assertTrue($location->validate());
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace Harp\Locations;
 
+use Harp\Harp\Repo;
+
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
@@ -9,7 +11,13 @@ namespace Harp\Locations;
  */
 class Region extends Location
 {
-    const REPO = 'Harp\Locations\RegionRepo';
+    public static function initialize(Repo $repo)
+    {
+        parent::initialize($repo);
+
+        $repo
+            ->setRootRepo(Location::getRepo());
+    }
 
     /**
      * @return boolean

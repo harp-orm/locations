@@ -3,6 +3,7 @@
 namespace Harp\Locations\Test;
 
 use Harp\Locations\Location;
+use Harp\Locations\Country;
 
 /**
  * @coversDefaultClass Harp\Locations\Country
@@ -13,6 +14,34 @@ use Harp\Locations\Location;
  */
 class CountryTest extends AbstractTestCase
 {
+    /**
+     * @covers ::initialize
+     */
+    public function testInitialize()
+    {
+        $repo = Country::getRepo();
+        $this->assertSame(Location::getRepo(), $repo->getRootRepo());
+
+        $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
+        $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));
+
+        $city = new Country(['name' => 'test']);
+
+        $this->assertFalse($city->validate());
+
+        $this->assertEquals('code must be present', $city->getErrors()->humanize());
+
+        $city->code = '1';
+
+        $this->assertFalse($city->validate());
+
+        $this->assertEquals('code should be 2 letters', $city->getErrors()->humanize());
+
+        $city->code = 'BG';
+
+        $this->assertTrue($city->validate());
+    }
+
     /**
      * @covers ::isCountry
      * @covers ::getRepo
