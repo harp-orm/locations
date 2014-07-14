@@ -20,7 +20,6 @@ class CountryTest extends AbstractTestCase
     public function testInitialize()
     {
         $repo = Country::getRepo();
-        $this->assertSame(Location::getRepo(), $repo->getRootRepo());
 
         $this->assertInstanceOf('Harp\MP\BelongsTo', $repo->getRel('parent'));
         $this->assertInstanceOf('Harp\MP\HasMany', $repo->getRel('children'));

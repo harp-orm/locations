@@ -4,8 +4,8 @@ namespace Harp\Locations;
 
 use Harp\Harp\AbstractModel;
 use Harp\MP\MaterializedPathTrait;
-use Harp\Core\Model\InheritedTrait;
-use Harp\Harp\Repo;
+use Harp\Harp\Model\InheritedTrait;
+use Harp\Harp\Config;
 use Harp\Validate\Assert;
 
 /**
@@ -23,12 +23,12 @@ class Location extends AbstractModel
         return self::where('code', $code)->applyFlags($flags)->loadFirst();
     }
 
-    public static function initialize(Repo $repo)
+    public static function initialize(Config $config)
     {
-        InheritedTrait::initialize($repo);
-        MaterializedPathTrait::initialize($repo);
+        InheritedTrait::initialize($config);
+        MaterializedPathTrait::initialize($config);
 
-        $repo
+        $config
             ->addAsserts([
                 new Assert\Present('name'),
             ]);

@@ -11,10 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "harp-orm/materialized-path": "~0.2.0"
-    },
-    "require-dev": {
-        "clippings/env-backup": "~0.2.5"
+        "harp-orm/materialized-path": "~0.3.0"
     },
     "autoload": {
         "psr-4": {"Harp\\Locations\\": "src/"}

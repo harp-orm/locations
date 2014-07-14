@@ -2,7 +2,7 @@
 
 namespace Harp\Locations\Test;
 
-use Harp\Core\Repo\Container;
+use Harp\Harp\Repo\Container;
 
 use Harp\Query\DB;
 use PHPUnit_Framework_TestCase;

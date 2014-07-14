@@ -2,7 +2,7 @@
 
 namespace Harp\Locations;
 
-use Harp\Harp\Repo;
+use Harp\Harp\Config;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -11,12 +11,9 @@ use Harp\Harp\Repo;
  */
 class Region extends Location
 {
-    public static function initialize(Repo $repo)
+    public static function initialize(Config $config)
     {
-        parent::initialize($repo);
-
-        $repo
-            ->setRootRepo(Location::getRepo());
+        parent::initialize($config);
     }
 
     /**

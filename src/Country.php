@@ -3,7 +3,7 @@
 namespace Harp\Locations;
 
 use Harp\Validate\Assert;
-use Harp\Harp\Repo;
+use Harp\Harp\Config;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -12,12 +12,11 @@ use Harp\Harp\Repo;
  */
 class Country extends Location
 {
-    public static function initialize(Repo $repo)
+    public static function initialize(Config $config)
     {
-        parent::initialize($repo);
+        parent::initialize($config);
 
-        $repo
-            ->setRootRepo(Location::getRepo())
+        $config
             ->addAsserts([
                 new Assert\Present('code'),
                 new Assert\LengthEquals('code', 2),

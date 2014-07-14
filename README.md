@@ -12,9 +12,10 @@ Hierachical Location struction - you can have regions that encompas countries or
 Usage
 -----
 
-Just use the models / repos included.
+Just use the provided models
 
 All locations are saved in a single table, and their relations with one another are handled with [harp-orm/materialized-path](https://github.com/harp-orm/materialized-path)
+All Models are children of the Locaition model, inhereting its methods.
 
 __Database Tables:__
 
@@ -30,6 +31,20 @@ __Database Tables:__
 │ code        │ string    │
 └─────────────┴───────────┘
 ```
+
+
+Methods
+-------
+
+City, Country, Region and Locaiotn models have some helper methods:
+
+Method                                    | Description
+------------------------------------------|--------------------------------------------------
+__contains__(Location $location)          | Check if a given location contains another location, will return true if its a child or is the same location
+__isRegion__()                            | Return true for Region models and false for everything else
+__isCountry__()                           | Return true for Country models and false for everything else
+__isCity__()                              | Return true for City models and false for everything else
+
 
 License
 -------
